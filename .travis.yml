@@ -2,9 +2,9 @@ dist: trusty
 language: java
 jdk: oraclejdk8
 sudo: enabled 
-before_install:
-    - ls -R ./
 install: mvn clean install -Dgpg.skip
+after_script:
+    - bash <(curl -s https://codecov.io/bash)
 notifications: 
  email:
   recipients: 
