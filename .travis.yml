@@ -2,7 +2,10 @@ dist: trusty
 language: java
 jdk: oraclejdk8
 sudo: enabled 
-install: mvn install -Dgpg.skip
+before_install:
+    - apt install tree
+    - tree -pugD ./
+install: mvn clean install -Dgpg.skip
 notifications: 
  email:
   recipients: 
