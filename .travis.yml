@@ -3,7 +3,7 @@ language: java
 jdk: oraclejdk8
 sudo: enabled 
 before_install:
-    - apt install tree
+    - sudo apt install tree
     - tree -pugD ./
 install: mvn clean install -Dgpg.skip
 notifications: 
