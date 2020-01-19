@@ -20,11 +20,14 @@ import weka.core.Utils;
 /**
  * Class for computing various information retrieval measures.
  *
- * @author Grigorios Tsoumakas
+ * Based on the code written by Grigorios Tsoumakas
  * @author Pawel Trajdos
- * @version 2012.05.29
+ * @since 0.0.1
+ * @version 0.0.2
  */
 public class InformationRetrievalMeasures {
+	
+	public static double EPS=1E-6;
 	
 	 /**
      * Computation of Jaccard-measure based on tp, fp, fn. We treat special
@@ -43,10 +46,11 @@ public class InformationRetrievalMeasures {
      * @return the value of the Jaccard-measure
      */
     public static double JaccardMeasure(double tp, double fp, double fn) {
-        if (tp + fp + fn == 0) {
-            return 1;
+    	double denom = tp + fp + fn; 
+        if ( denom < EPS) {
+            return 1.0;
         }
-        return (tp)/(tp+fp+fn);
+        return (tp)/denom;
     }
 
 
@@ -68,8 +72,9 @@ public class InformationRetrievalMeasures {
      * @return the value of the f-measure
      */
     public static double fMeasure(double tp, double fp, double fn, double beta) {
-        if (tp + fp + fn == 0) {
-            return 1;
+    	double denom = tp + fp + fn; 
+        if ( denom < EPS) {
+            return 1.0;
         }
         double beta2 = beta * beta;
         return ((beta2 + 1) * tp) / ((beta2 + 1) * tp + beta2 * fn + fp);
@@ -89,11 +94,11 @@ public class InformationRetrievalMeasures {
      * @return the value of precision
      */
     public static double precision(double tp, double fp, double fn) {
-        if (tp + fp + fn == 0) {
-            return 1;
+        if (tp + fp + fn < EPS) {
+            return 1.0;
         }
-        if (tp + fp == 0) {
-            return 0;
+        if (tp + fp < EPS) {
+            return 0.0;
         }
         return tp / (tp + fp);
     }
@@ -112,11 +117,11 @@ public class InformationRetrievalMeasures {
      * @return the value of recall
      */
     public static double recall(double tp, double fp, double fn) {
-        if (tp + fp + fn == 0) {
-            return 1;
+        if (tp + fp + fn < EPS) {
+            return 1.0;
         }
-        if (tp + fn == 0) {
-            return 0;
+        if (tp + fn < EPS) {
+            return 0.0;
         }
         return tp / (tp + fn);
     }
@@ -135,11 +140,11 @@ public class InformationRetrievalMeasures {
      * @return the value of specificity
      */
     public static double specificity(double tn, double fp, double fn) {
-        if (tn + fp + fn == 0) {
-            return 1;
+        if (tn + fp + fn < EPS) {
+            return 1.0;
         }
-        if (tn + fp == 0) {
-            return 0;
+        if (tn + fp < EPS) {
+            return 0.0;
         }
         return tn / (tn + fp);
     }
@@ -159,7 +164,7 @@ public class InformationRetrievalMeasures {
      */
     public static double Tversky(double tp, double fp, double fn,double alpha,double beta) {
         if (Utils.eq(tp+alpha*fn+beta*fp, 0)) {
-            return 1;
+            return 1.0;
         }
   
         
@@ -181,14 +186,13 @@ public class InformationRetrievalMeasures {
     public static double Matthews(double tp, double fp, double fn,double tn) {
     	
     	double a,b,c,d;
-    	double eps = 1E-8;
     	double denominator =0;
     	a = tp + fp;
     	b = tp + fn;
     	c = tn + fp;
     	d = tn + fn;
-    	if(a<eps || b <eps || c<eps || d<eps ){
-    		denominator =1;
+    	if(a < EPS || b < EPS || c < EPS || d < EPS ){
+    		denominator =1.0;
     	}else{
     		denominator = Math.sqrt(a*b*c*d);
     	}
@@ -205,7 +209,15 @@ public class InformationRetrievalMeasures {
     	double pYes = (tp+fp)*(tp+fn)/(sum*sum);
     	double pNo = (tn+fn)*(fp+tn)/(sum*sum);
     	double pE = pYes + pNo;
-    	double kappa = (p0-pE)/(1-pE);
+    	
+    	double denom=(1-pE);
+    	double kappa;
+    	if(denom < EPS) {
+    		kappa=p0;
+    	}else {
+    		kappa = (p0-pE)/(1-pE);
+    	}
+    	
     	double kappaNormalized = 1.0 -  (1 + kappa)*0.5;
     	return kappaNormalized;
     }
