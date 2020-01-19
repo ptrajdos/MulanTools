@@ -2,8 +2,18 @@ package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.InformationRetrievalMeasures;
 import weka.core.Utils;
-
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
 public class MicroPrecisionMeasure extends LabelBasedPrecisionMeasure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4681556759318070680L;
 
 	public MicroPrecisionMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);

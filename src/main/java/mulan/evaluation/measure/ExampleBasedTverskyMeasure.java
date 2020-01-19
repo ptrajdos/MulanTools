@@ -19,10 +19,10 @@ import mulan.evaluation.measure.ExampleBasedBipartitionMeasureBase;
 import mulan.evaluation.measure.InformationRetrievalMeasures;
 
 /**
- * Implementation of the example-based F measure.
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
- * @author Pawel Trajdos
- * @version 2013.12.08
  */
 public class ExampleBasedTverskyMeasure extends ExampleBasedBipartitionMeasureBase {
 

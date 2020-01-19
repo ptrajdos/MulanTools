@@ -222,6 +222,49 @@ public class InformationRetrievalMeasures {
     	return kappaNormalized;
     }
     
+    /**
+     * The method implements Kappa_m function described in 
+     * @inproceedings{bifet2015efficient,
+ 		author = {Bifet, Albert and de Francisci Morales, Gianmarco and Read, Jesse and Holmes, Geoff and Pfahringer, Bernhard},
+ 		title = {Efficient Online Evaluation of Big Data Stream Classifiers},
+ 		booktitle = {Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining - KDD '15},
+ 		pages = {59--68},
+ 		year = {2015},
+ 		organization = {ACM},
+ 		doi = {10.1145/2783258.2783372},
+ 		source = {Crossref},
+ 		url = {https://doi.org/10.1145/2783258.2783372},
+ 		publisher = {ACM Press},
+ 		isbn = {9781450336642},
+		}
+	 * @author pawel trajdos
+     * @param tp
+     * @param fp
+     * @param fn
+     * @param tn
+     * @return
+     */
+    
+    public static double KappaM(double tp, double fp, double fn,double tn) {
+    	double sum = tp + fp +fn + tn;
+    	double p0 = (tp+tn)/sum;
+    	
+    	double pp = (tp + fp)/sum;
+    	double pn = (tn + fn)/sum;
+    	double pm = Math.max(pp, pn);
+    	double denom = 1 - pm;
+    	double kappa;
+    	if(denom < EPS) {
+    		kappa = p0;
+    	}else {
+    		kappa = (p0 - pm)/denom;
+    	}
+    	
+    	 
+    	double kappaNormalized = 1.0 -  (1 + kappa)*0.5;
+    	return kappaNormalized;
+    }
+    
     
     public static double Hamming(double tp, double fp, double fn,double tn) {
     	double denominator = tp+fp+fn+tn;

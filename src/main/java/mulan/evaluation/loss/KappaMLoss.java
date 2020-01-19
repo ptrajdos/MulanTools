@@ -6,18 +6,23 @@ package mulan.evaluation.loss;
 import mulan.evaluation.loss.BipartitionLossFunctionBase;
 
 /**
- * Class implements Mathews-correlation-coeffiecient-based loss function
+ * Class implements Kappa-criterion-based loss function
  * @author pawel trajdos
  * @since 0.0.2
  * @version 0.0.2
  *
  */
-public class MatthewsLoss extends BipartitionLossFunctionBase {
+public class KappaMLoss extends BipartitionLossFunctionBase {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 3259861817542242089L;
+	private static final long serialVersionUID = 3840953171060315562L;
+
+	/**
+	 * 
+	 */
+	
 
 	
 	/* (non-Javadoc)
@@ -25,7 +30,7 @@ public class MatthewsLoss extends BipartitionLossFunctionBase {
 	 */
 	@Override
 	public String getName() {
-		return new String("Matthews-E");
+		return new String("KappaM-E");
 	}
 
 	/* (non-Javadoc)
@@ -34,7 +39,7 @@ public class MatthewsLoss extends BipartitionLossFunctionBase {
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
-		return mulan.evaluation.measure.InformationRetrievalMeasures.Matthews(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
+		return mulan.evaluation.measure.InformationRetrievalMeasures.KappaM(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
 	}
 
 }

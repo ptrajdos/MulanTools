@@ -1,10 +1,22 @@
 package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.InformationRetrievalMeasures;
+
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
 import mulan.evaluation.measure.MacroAverageMeasure;
 
 public class MacroPrecisionMeasure extends LabelBasedPrecisionMeasure implements
 		MacroAverageMeasure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7117382660843737685L;
 
 	public MacroPrecisionMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);

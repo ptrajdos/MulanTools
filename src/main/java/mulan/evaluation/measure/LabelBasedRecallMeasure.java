@@ -1,17 +1,21 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.LabelBasedBipartitionMeasureBase;
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
 
 public abstract class LabelBasedRecallMeasure extends
-		LabelBasedBipartitionMeasureBase {
+		LabelBasedIdealValue0Measure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8273442149840300880L;
 
 	public LabelBasedRecallMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);
 	}
-
-	@Override
-	public double getIdealValue() {
-		return 0;
-	}
-
 }

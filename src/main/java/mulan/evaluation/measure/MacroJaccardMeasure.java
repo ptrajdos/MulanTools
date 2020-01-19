@@ -19,10 +19,10 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 import mulan.evaluation.measure.MacroAverageMeasure;
 
 /**
- * Implementation of the macro-averaged f measure.
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
- *@author Pawel Trajdos
- * @version 2013.12.08
  */
 public class MacroJaccardMeasure extends LabelBasedJaccardMeasure implements MacroAverageMeasure {
 

@@ -3,13 +3,13 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.LabelBasedBipartitionMeasureBase;
-
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
  */
-abstract public class LabelBasedTverskyMeasure extends LabelBasedBipartitionMeasureBase {
+abstract public class LabelBasedTverskyMeasure extends LabelBasedIdealValue0Measure {
 
 	/**
 	 * 
@@ -33,12 +33,6 @@ abstract public class LabelBasedTverskyMeasure extends LabelBasedBipartitionMeas
 		this.beta=beta;
 	}
 
-	/* (non-Javadoc)
-	 * @see mulan.evaluation.measure.Measure#getIdealValue()
-	 */
-	@Override
-	public double getIdealValue() {
-		return 0.0;
-	}
+
 
 }

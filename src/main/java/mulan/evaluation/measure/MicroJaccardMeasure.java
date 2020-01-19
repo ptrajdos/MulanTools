@@ -19,15 +19,19 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 import weka.core.Utils;
 
 /**
- * Implementation of the micro-averaged Jaccardmeasure.
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
- * @author Grigorios Tsoumakas
- * @author Pawel Trajdos
- * @version 2013.12.08
  */
 public class MicroJaccardMeasure extends LabelBasedJaccardMeasure {
 
     /**
+	 * 
+	 */
+	private static final long serialVersionUID = -3394227842246612260L;
+
+	/**
      * Constructs a new object with given number of labels and beta=1
      *
      * @param numOfLabels the number of labels

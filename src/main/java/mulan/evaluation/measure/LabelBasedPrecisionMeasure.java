@@ -1,18 +1,25 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.LabelBasedBipartitionMeasureBase;
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
 
 abstract public class LabelBasedPrecisionMeasure extends
-		LabelBasedBipartitionMeasureBase {
+		LabelBasedIdealValue0Measure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -1399811166776664747L;
 
 	public LabelBasedPrecisionMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public double getIdealValue() {
-		return 0;
-	}
+	
 
 }
