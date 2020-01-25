@@ -11,18 +11,18 @@ import mulan.evaluation.measure.LossBasedBipartitionMeasureBase;
  * @version 0.0.2
  *
  */
-public class MatthewsLoss extends LossBasedBipartitionMeasureBase {
+public class KappaMLoss extends LossBasedBipartitionMeasureBase {
 
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -4124041045975950900L;
+	private static final long serialVersionUID = 1396685344069373918L;
 
 	/**
 	 * @param aLoss
 	 */
-	public MatthewsLoss() {
-		super(new mulan.evaluation.loss.MatthewsLoss());
+	public KappaMLoss() {
+		super(new mulan.evaluation.loss.KappaMLoss());
 		
 	}
 

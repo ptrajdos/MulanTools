@@ -2,8 +2,18 @@ package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.InformationRetrievalMeasures;
 import weka.core.Utils;
-
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
 public class MicroRecallMeasure extends LabelBasedRecallMeasure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3794564732131572341L;
 
 	public MicroRecallMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);

@@ -6,8 +6,8 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 /**
  * Class implements F_\beta -based loss function
  * @author pawel trajdos
- * @since 0.0.1
- * @version 0.0.1
+ * @since 0.0.2
+ * @version 0.0.2
  *
  */
 public class FLoss extends BipartitionLossFunctionBase {
@@ -30,21 +30,8 @@ public class FLoss extends BipartitionLossFunctionBase {
 
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
-		 	double tp = 0;
-	        double fp = 0;
-	        double fn = 0;
-	        for (int i = 0; i < groundTruth.length; i++) {
-	            if (bipartition[i] && groundTruth[i]) {
-	                tp++;
-	            }
-	            if (bipartition[i] && !groundTruth[i]) {
-	                fp++;
-	            }
-	            if (!bipartition[i] && groundTruth[i]) {
-	                fn++;
-	            }
-	        }
-		return 1.0 - InformationRetrievalMeasures.fMeasure(tp, fp, fn, beta);
+		 	SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
+		return 1.0 - InformationRetrievalMeasures.fMeasure(cm.getTp(),cm.getFp(), cm.getFn(), beta);
 	}
 
 }

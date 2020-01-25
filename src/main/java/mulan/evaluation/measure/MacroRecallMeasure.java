@@ -3,8 +3,20 @@ package mulan.evaluation.measure;
 import mulan.evaluation.measure.InformationRetrievalMeasures;
 import mulan.evaluation.measure.MacroAverageMeasure;
 
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
+
 public class MacroRecallMeasure extends LabelBasedRecallMeasure implements
 		MacroAverageMeasure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4769652556141525136L;
 
 	public MacroRecallMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);

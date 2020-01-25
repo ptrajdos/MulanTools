@@ -2,6 +2,13 @@ package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.LossBasedBipartitionMeasureBase;
 
+/**
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
+ *
+ */
+
 public class FLoss extends LossBasedBipartitionMeasureBase {
 
 	/**

@@ -7,10 +7,17 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 import weka.core.Utils;
 
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
  */
 public class MicroMatthewsMeasure extends LabelBasedMathewsMeasure {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6587203211531888252L;
 
 	/**
 	 * @param aNumOfLabels

@@ -9,7 +9,7 @@ package mulan.evaluation.measure;
  * @version 0.0.2
  *
  */
-public abstract class LabelBasedMathewsMeasure extends LabelBasedIdealValue0Measure {
+public abstract class LabelBasedKappaMeasure extends LabelBasedIdealValue0Measure {
 
 	/**
 	 * 
@@ -21,11 +21,8 @@ public abstract class LabelBasedMathewsMeasure extends LabelBasedIdealValue0Meas
 	/**
 	 * @param aNumOfLabels
 	 */
-	public LabelBasedMathewsMeasure(int aNumOfLabels) {
+	public LabelBasedKappaMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);
 	}
-
-
-
 
 }

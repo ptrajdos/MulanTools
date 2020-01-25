@@ -7,15 +7,12 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 import weka.core.Utils;
 
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
  */
 public class MicroKappaMeasure extends LabelBasedMathewsMeasure {
-
-	/**
-	 * 
-	 */
-	
 
 	/**
 	 * 

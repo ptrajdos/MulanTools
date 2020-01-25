@@ -6,8 +6,8 @@ import mulan.evaluation.measure.InformationRetrievalMeasures;
 /**
  * Class implements Precision-based loss function
  * @author pawel trajdos
- * @since 0.0.1
- * @version 0.0.1
+ * @since 0.0.2
+ * @version 0.0.2
  *
  */
 public class PrecLoss extends BipartitionLossFunctionBase {
@@ -28,22 +28,8 @@ public class PrecLoss extends BipartitionLossFunctionBase {
 
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
-		 	double tp = 0;
-	        double fp = 0;
-	        double fn = 0;
-	        for (int i = 0; i < groundTruth.length; i++) {
-	            if (bipartition[i] && groundTruth[i]) {
-	                tp++;
-	            }
-	            if (bipartition[i] && !groundTruth[i]) {
-	                fp++;
-	            }
-	            if (!bipartition[i] && groundTruth[i]) {
-	                fn++;
-	            }
-	        }
-	         
-		return 1.0 - InformationRetrievalMeasures.precision(tp, fp, fn);
+		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
+		return 1.0 - InformationRetrievalMeasures.precision( cm.getTp(), cm.getFp(), cm.getFn() );
 	}
 
 }

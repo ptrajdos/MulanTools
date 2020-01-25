@@ -8,8 +8,8 @@ import mulan.evaluation.loss.BipartitionLossFunctionBase;
 /**
  * Class implements Kappa-criterion-based loss function
  * @author pawel trajdos
- * @since 0.0.1
- * @version 0.0.1
+ * @since 0.0.2
+ * @version 0.0.2
  *
  */
 public class KappaLoss extends BipartitionLossFunctionBase {
@@ -38,27 +38,8 @@ public class KappaLoss extends BipartitionLossFunctionBase {
 	 */
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
-		double tp = 0;
-        double fp = 0;
-        double fn = 0;
-        double tn = 0;
-        for (int i = 0; i < groundTruth.length; i++) {
-            if (bipartition[i] && groundTruth[i]) {
-                tp++;
-            }
-            if (bipartition[i] && !groundTruth[i]) {
-                fp++;
-            }
-            if (!bipartition[i] && groundTruth[i]) {
-                fn++;
-            }
-            
-            if (!bipartition[i] && !groundTruth[i]) {
-                tn++;
-            }
-            
-        }
-		return mulan.evaluation.measure.InformationRetrievalMeasures.Kappa(tp, fp, fn, tn);
+		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
+		return mulan.evaluation.measure.InformationRetrievalMeasures.Kappa(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
 	}
 
 }

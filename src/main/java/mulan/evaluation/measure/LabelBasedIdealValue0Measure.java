@@ -15,13 +15,15 @@
  */
 package mulan.evaluation.measure;
 
+import mulan.evaluation.measure.LabelBasedBipartitionMeasureBase;
+
 /**
  * @author pawel trajdos
  * @since 0.0.1
  * @version 0.0.2
  *
  */
-public abstract class LabelBasedJaccardMeasure extends LabelBasedIdealValue0Measure {
+public abstract class LabelBasedIdealValue0Measure extends LabelBasedBipartitionMeasureBase {
 
     /**
 	 * 
@@ -34,9 +36,13 @@ public abstract class LabelBasedJaccardMeasure extends LabelBasedIdealValue0Meas
      * @param numOfLabels the number of labels
      * @param beta the beta parameter
      */
-    public LabelBasedJaccardMeasure(int numOfLabels) {
+    public LabelBasedIdealValue0Measure(int numOfLabels) {
         super(numOfLabels);
     }
 
+    @Override
+    public double getIdealValue() {
+        return 0;
+    }
 
 }

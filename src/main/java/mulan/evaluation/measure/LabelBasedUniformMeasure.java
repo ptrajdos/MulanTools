@@ -3,13 +3,13 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.LabelBasedBipartitionMeasureBase;
-
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.2
  *
  */
-public class LabelBasedUniformMeasure extends  LabelBasedBipartitionMeasureBase{
+public class LabelBasedUniformMeasure extends  LabelBasedIdealValue0Measure{
 
 	public LabelBasedUniformMeasure(int aNumOfLabels) {
 		super(aNumOfLabels);
@@ -30,10 +30,7 @@ public class LabelBasedUniformMeasure extends  LabelBasedBipartitionMeasureBase{
 		return 0;
 	}
 
-	@Override
-	public double getIdealValue() {
-		return 0;
-	}
+	
 
 
 }
