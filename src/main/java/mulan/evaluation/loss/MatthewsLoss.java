@@ -34,7 +34,7 @@ public class MatthewsLoss extends BipartitionLossFunctionBase {
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
-		return mulan.evaluation.measure.InformationRetrievalMeasures.Matthews(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
+		return mulan.evaluation.measure.InformationRetrievalMeasuresPT.Matthews(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
 	}
 
 }

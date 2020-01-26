@@ -3,7 +3,7 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import mulan.evaluation.measure.MacroAverageMeasure;
 
 /**
@@ -53,7 +53,7 @@ public class MacroTverskyMeasure extends LabelBasedTverskyMeasure implements
 		double sum = 0;
         int count = 0;
         for (int labelIndex = 0; labelIndex < this.numOfLabels; labelIndex++) {
-            sum +=1.0- InformationRetrievalMeasures.Tversky(this.truePositives[labelIndex],
+            sum +=1.0- InformationRetrievalMeasuresPT.Tversky(this.truePositives[labelIndex],
                     this.falsePositives[labelIndex],
                     this.falseNegatives[labelIndex], this.alpha, this.beta);
             count++;
@@ -66,7 +66,7 @@ public class MacroTverskyMeasure extends LabelBasedTverskyMeasure implements
 	 */
 	@Override
 	public double getValue(int labelIndex) {
-		 return 1.0-InformationRetrievalMeasures.Tversky(this.truePositives[labelIndex],
+		 return 1.0-InformationRetrievalMeasuresPT.Tversky(this.truePositives[labelIndex],
 	                this.falsePositives[labelIndex],
 	                this.falseNegatives[labelIndex], this.alpha, this.beta);
 	}

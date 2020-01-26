@@ -1,6 +1,6 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import weka.core.Utils;
 /**
  * @author pawel trajdos
@@ -34,7 +34,7 @@ public class MicroTverskyMeasure extends LabelBasedTverskyMeasure {
 		 double tp = Utils.sum(truePositives);
 	        double fp = Utils.sum(falsePositives);
 	        double fn = Utils.sum(falseNegatives);
-	        return  1.0 - InformationRetrievalMeasures.Tversky(tp, fp, fn, this.alpha, this.beta);
+	        return  1.0 - InformationRetrievalMeasuresPT.Tversky(tp, fp, fn, this.alpha, this.beta);
 	}
 
 }

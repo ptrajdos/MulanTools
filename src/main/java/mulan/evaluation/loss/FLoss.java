@@ -1,7 +1,7 @@
 package mulan.evaluation.loss;
 
 import mulan.evaluation.loss.BipartitionLossFunctionBase;
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 
 /**
  * Class implements F_\beta -based loss function
@@ -31,7 +31,7 @@ public class FLoss extends BipartitionLossFunctionBase {
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		 	SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
-		return 1.0 - InformationRetrievalMeasures.fMeasure(cm.getTp(),cm.getFp(), cm.getFn(), beta);
+		return 1.0 - InformationRetrievalMeasuresPT.fMeasure(cm.getTp(),cm.getFp(), cm.getFn(), beta);
 	}
 
 }

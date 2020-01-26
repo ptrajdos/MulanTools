@@ -1,6 +1,6 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import weka.core.Utils;
 /**
  * @author pawel trajdos
@@ -30,7 +30,7 @@ public class MicroPrecisionMeasure extends LabelBasedPrecisionMeasure {
 		double tp = Utils.sum(truePositives);
         double fp = Utils.sum(falsePositives);
         double fn = Utils.sum(falseNegatives);
-        return  1.0 - InformationRetrievalMeasures.precision(tp, fp, fn);
+        return  1.0 - InformationRetrievalMeasuresPT.precision(tp, fp, fn);
 	}
 
 }

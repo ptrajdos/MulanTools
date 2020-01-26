@@ -16,7 +16,7 @@
 package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.ExampleBasedBipartitionMeasureBase;
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 
 /**
  * @author pawel trajdos
@@ -77,7 +77,7 @@ public class ExampleBasedTverskyMeasure extends ExampleBasedBipartitionMeasureBa
             }
         }
 
-        this.sum +=1.0 -  InformationRetrievalMeasures.Tversky(tp, fp, fn, this.alpha, this.beta);
+        this.sum +=1.0 -  InformationRetrievalMeasuresPT.Tversky(tp, fp, fn, this.alpha, this.beta);
         this.count++;
     }
 }

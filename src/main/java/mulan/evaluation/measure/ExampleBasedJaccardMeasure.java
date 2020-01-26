@@ -16,7 +16,7 @@
 package mulan.evaluation.measure;
 
 import mulan.evaluation.measure.ExampleBasedBipartitionMeasureBase;
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 
 /**
  * @author pawel trajdos
@@ -67,7 +67,7 @@ public class ExampleBasedJaccardMeasure extends ExampleBasedBipartitionMeasureBa
             }
         }
 
-        this.sum +=1.0 -  InformationRetrievalMeasures.JaccardMeasure(tp, fp, fn);
+        this.sum +=1.0 -  InformationRetrievalMeasuresPT.JaccardMeasure(tp, fp, fn);
         this.count++;
     }
 }

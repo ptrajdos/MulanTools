@@ -33,7 +33,7 @@ public class TvLoss extends BipartitionLossFunctionBase {
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
         
-		return 1- mulan.evaluation.measure.InformationRetrievalMeasures.Tversky( cm.getTp(), cm.getFp(), cm.getFn(), alpha, beta);
+		return 1- mulan.evaluation.measure.InformationRetrievalMeasuresPT.Tversky( cm.getTp(), cm.getFp(), cm.getFn(), alpha, beta);
 	}
 
 }

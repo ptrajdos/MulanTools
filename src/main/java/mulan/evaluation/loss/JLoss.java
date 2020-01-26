@@ -24,7 +24,7 @@ public class JLoss extends BipartitionLossFunctionBase {
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
-		return 1.0 - mulan.evaluation.measure.InformationRetrievalMeasures.JaccardMeasure(cm.getTp(), cm.getFp(), cm.getFn());
+		return 1.0 - mulan.evaluation.measure.InformationRetrievalMeasuresPT.JaccardMeasure(cm.getTp(), cm.getFp(), cm.getFn());
 	}
 
 }
