@@ -1,6 +1,6 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 
 /**
  * @author pawel trajdos
@@ -33,7 +33,7 @@ public class MacroPrecisionMeasure extends LabelBasedPrecisionMeasure implements
 		double sum = 0;
         int count = 0;
         for (int labelIndex = 0; labelIndex < numOfLabels; labelIndex++) {
-            sum +=1.0- InformationRetrievalMeasures.precision(truePositives[labelIndex],
+            sum +=1.0- InformationRetrievalMeasuresPT.precision(truePositives[labelIndex],
                     falsePositives[labelIndex],
                     falseNegatives[labelIndex]);
             count++;
@@ -43,7 +43,7 @@ public class MacroPrecisionMeasure extends LabelBasedPrecisionMeasure implements
 
 	@Override
 	public double getValue(int labelIndex) {
-		return 1.0-InformationRetrievalMeasures.precision(truePositives[labelIndex],
+		return 1.0-InformationRetrievalMeasuresPT.precision(truePositives[labelIndex],
                 falsePositives[labelIndex],
                 falseNegatives[labelIndex]);
 	}

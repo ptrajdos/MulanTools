@@ -3,7 +3,7 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import mulan.evaluation.measure.MacroAverageMeasure;
 
 /**
@@ -40,7 +40,7 @@ MacroAverageMeasure {
 		double sum = 0;
         int count = 0;
         for (int labelIndex = 0; labelIndex < this.numOfLabels; labelIndex++) {
-            sum += InformationRetrievalMeasures.Kappa(this.truePositives[labelIndex], this.falsePositives[labelIndex],
+            sum += InformationRetrievalMeasuresPT.Kappa(this.truePositives[labelIndex], this.falsePositives[labelIndex],
             												this.falseNegatives[labelIndex], this.trueNegatives[labelIndex]);
             count++;
         }
@@ -55,7 +55,7 @@ MacroAverageMeasure {
 
 	@Override
 	public double getValue(int labelIndex) {
-		return  InformationRetrievalMeasures.Kappa(this.truePositives[labelIndex], this.falsePositives[labelIndex],
+		return  InformationRetrievalMeasuresPT.Kappa(this.truePositives[labelIndex], this.falsePositives[labelIndex],
 				this.falseNegatives[labelIndex], this.trueNegatives[labelIndex]);
 	}
 

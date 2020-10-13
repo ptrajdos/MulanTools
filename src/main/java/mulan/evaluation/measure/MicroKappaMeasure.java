@@ -3,7 +3,7 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import weka.core.Utils;
 
 /**
@@ -43,7 +43,7 @@ public class MicroKappaMeasure extends LabelBasedMathewsMeasure {
         double fp = Utils.sum(falsePositives);
         double fn = Utils.sum(falseNegatives);
         double tn = Utils.sum(trueNegatives);
-        return  InformationRetrievalMeasures.Kappa(tp, fp, fn, tn);
+        return  InformationRetrievalMeasuresPT.Kappa(tp, fp, fn, tn);
 	}
 
 }

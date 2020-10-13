@@ -15,7 +15,7 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import weka.core.Utils;
 
 /**
@@ -45,7 +45,7 @@ public class MicroJaccardMeasure extends LabelBasedJaccardMeasure {
         double tp = Utils.sum(truePositives);
         double fp = Utils.sum(falsePositives);
         double fn = Utils.sum(falseNegatives);
-        return  1.0 - InformationRetrievalMeasures.JaccardMeasure(tp, fp, fn);
+        return  1.0 - InformationRetrievalMeasuresPT.JaccardMeasure(tp, fp, fn);
     }
 
     @Override

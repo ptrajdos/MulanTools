@@ -23,9 +23,9 @@ import weka.core.Utils;
  * Based on the code written by Grigorios Tsoumakas
  * @author Pawel Trajdos
  * @since 0.0.1
- * @version 0.0.2
+ * @version 0.1.0
  */
-public class InformationRetrievalMeasures {
+public class InformationRetrievalMeasuresPT {
 	
 	public static double EPS=1E-6;
 	

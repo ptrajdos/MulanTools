@@ -1,6 +1,6 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasures;
+import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import mulan.evaluation.measure.MacroAverageMeasure;
 
 /**
@@ -33,7 +33,7 @@ public class MacroRecallMeasure extends LabelBasedRecallMeasure implements
 		double sum = 0;
         int count = 0;
         for (int labelIndex = 0; labelIndex < numOfLabels; labelIndex++) {
-            sum +=1.0- InformationRetrievalMeasures.recall(truePositives[labelIndex],
+            sum +=1.0- InformationRetrievalMeasuresPT.recall(truePositives[labelIndex],
                     falsePositives[labelIndex],
                     falseNegatives[labelIndex]);
             count++;
@@ -43,7 +43,7 @@ public class MacroRecallMeasure extends LabelBasedRecallMeasure implements
 
 	@Override
 	public double getValue(int labelIndex) {
-		return 1.0-InformationRetrievalMeasures.recall(truePositives[labelIndex],
+		return 1.0-InformationRetrievalMeasuresPT.recall(truePositives[labelIndex],
                 falsePositives[labelIndex],
                 falseNegatives[labelIndex]);
 	}
