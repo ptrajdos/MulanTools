@@ -3,8 +3,6 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.AveragePrecision;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1

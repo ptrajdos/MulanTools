@@ -1,6 +1,5 @@
 package mulan.evaluation.loss;
 
-import mulan.evaluation.loss.BipartitionLossFunctionBase;
 import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 
 /**

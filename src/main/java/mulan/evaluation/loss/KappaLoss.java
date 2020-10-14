@@ -3,8 +3,6 @@
  */
 package mulan.evaluation.loss;
 
-import mulan.evaluation.loss.BipartitionLossFunctionBase;
-
 /**
  * Class implements Kappa-criterion-based loss function
  * @author pawel trajdos

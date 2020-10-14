@@ -3,8 +3,6 @@
  */
 package mulan.evaluation.loss;
 
-import mulan.evaluation.loss.BipartitionLossFunctionBase;
-
 /**
  * Class implements Mathews-correlation-coeffiecient-based loss function
  * @author pawel trajdos

@@ -1,6 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
 import weka.core.Utils;
 /**
  * @author pawel trajdos

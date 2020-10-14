@@ -1,7 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.Coverage;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1

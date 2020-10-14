@@ -1,7 +1,5 @@
 package mulan.evaluation.loss;
 
-import mulan.evaluation.loss.BipartitionLossFunctionBase;
-
 /**
  * Class implements Tversky-measure-based loss function
  * @author pawel trajdos
