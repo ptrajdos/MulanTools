@@ -6,7 +6,7 @@
 
    <groupId>com.github.ptrajdos</groupId>
    <artifactId>MulanTools</artifactId>
-   <version>0.2.0</version>
+   <version>0.3.0</version>
    
    <name>MulanTools</name>
    <description> Contains MulanTools package developed by Pawel Trajdos </description>
@@ -106,6 +106,10 @@
       	<groupId>nz.ac.waikato.cms.moa</groupId>
       	<artifactId>moa</artifactId>
       </exclusion>
+      <exclusion>
+        <groupId>nz.ac.waikato.cms.weka</groupId>
+        <artifactId>weka-dev</artifactId>
+      </exclusion> 
     </exclusions>
   </dependency>
 
@@ -115,7 +119,11 @@
     <version>1.5.0</version>
   </dependency>
 
-
+    <dependency>
+        <groupId>com.github.ptrajdos</groupId>
+        <artifactId>WekaTools</artifactId>
+        <version>[1.8.0,)</version>
+    </dependency>
     
   </dependencies>
   
@@ -195,7 +203,7 @@
 <plugin>
     <groupId>org.jacoco</groupId>
     <artifactId>jacoco-maven-plugin</artifactId>
-    <version>0.8.2</version>
+    <version>0.8.6</version>
     <executions>
       <execution>
         <goals>

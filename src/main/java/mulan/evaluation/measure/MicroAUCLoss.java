@@ -3,10 +3,17 @@
  */
 package mulan.evaluation.measure;
 
+import java.util.ArrayList;
+
+import weka.classifiers.evaluation.Prediction;
+import weka.classifiers.evaluation.ThresholdCurve;
+import weka.classifiers.evaluation.ThresholdCurvePT;
+import weka.core.Instances;
+
 /**
  * @author pawel trajdos
  * @since 0.2.0
- * @version 0.2.0
+ * @version 0.3.0
  *
  */
 public class MicroAUCLoss extends MicroAUC {
@@ -25,13 +32,22 @@ public class MicroAUCLoss extends MicroAUC {
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
 		return super.getName() + "_Loss";
 	}
 
 	@Override
 	public double getValue() {
-		return 1.0 -  super.getValue();
+		ThresholdCurve tc = new ThresholdCurve();
+        Instances result = tc.getCurve((ArrayList<Prediction>)all_Predictions, 1);
+        
+        double rarea =  ThresholdCurvePT.getROCArea(result);
+		
+		return 1.0 -  rarea;
+	}
+	
+	@Override
+	public double getIdealValue() {
+		return 0;
 	}
 
 }

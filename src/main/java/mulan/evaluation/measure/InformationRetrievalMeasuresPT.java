@@ -25,7 +25,7 @@ import weka.core.Utils;
  * @since 0.0.1
  * @version 0.1.0
  */
-public class InformationRetrievalMeasuresPT {
+public class InformationRetrievalMeasuresPT extends InformationRetrievalMeasures {
 	
 	public static double EPS=1E-6;
 	
