@@ -6,7 +6,7 @@
 
    <groupId>com.github.ptrajdos</groupId>
    <artifactId>MulanTools</artifactId>
-   <version>0.3.0</version>
+   <version>0.3.1</version>
    
    <name>MulanTools</name>
    <description> Contains MulanTools package developed by Pawel Trajdos </description>
