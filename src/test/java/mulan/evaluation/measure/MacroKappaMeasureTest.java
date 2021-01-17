@@ -4,20 +4,21 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MacroAUCLossTest extends LossMacroTest {
+public class MacroKappaMeasureTest extends LossMacroTest {
 
-	public MacroAUCLossTest(String name) {
+	public MacroKappaMeasureTest(String name) {
 		super(name);
+		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public Measure getMeasure() {
-		return new MacroAUCLoss(2);
+		return new MacroKappaMeasure(2);
 	}
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new MacroAUCLoss(numLabels);
+		return new MacroKappaMeasure(numLabels);
 	}
 
 	@Override

@@ -4,25 +4,27 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MacroAUCLossTest extends LossMacroTest {
+public class MacroTverskyMeasureTest extends LossMacroTest {
 
-	public MacroAUCLossTest(String name) {
+	public MacroTverskyMeasureTest(String name) {
 		super(name);
 	}
 
 	@Override
 	public Measure getMeasure() {
-		return new MacroAUCLoss(2);
+		return new MacroTverskyMeasure(2);
 	}
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new MacroAUCLoss(numLabels);
+		return new MacroTverskyMeasure(numLabels);
 	}
 
 	@Override
 	public double getWorstValue() {
 		return 1;
 	}
+
+
 
 }

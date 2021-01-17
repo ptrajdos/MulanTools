@@ -19,8 +19,17 @@ public class CoverageLoss extends Coverage {
 	 */
 	@Override
 	public double getValue() {
-	
 		return  super.getValue();
+	}
+	
+	@Override
+	public double getIdealValue() {
+		return 0;
+	}
+	
+	@Override
+	public String getName() {
+		return super.getName()+ "_Loss";
 	}
 
 	

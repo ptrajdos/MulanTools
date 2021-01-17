@@ -1,5 +1,6 @@
 package mulan.evaluation.measure;
 
+import java.util.Arrays;
 import java.util.Random;
 
 import junit.framework.TestCase;
@@ -16,7 +17,7 @@ public abstract class LossTest extends TestCase {
 	
 	public abstract Measure getMeasure();
 	public abstract Measure getMeasure(int numLabels);
-	public abstract double getWostValue();
+	public abstract double getWorstValue();
 	
 	
 	public void testLossRnd() {
@@ -34,7 +35,7 @@ public abstract class LossTest extends TestCase {
 				GroundTruth gtO = new GroundTruth(gt);				
 				meas.update(mlo, gtO);
 				
-				this.checkValue(meas);
+				this.checkProcedure(meas);
 			}
 	}
 	
@@ -54,7 +55,7 @@ public abstract class LossTest extends TestCase {
 					GroundTruth gtO = new GroundTruth(gt);				
 					meas.update(mlo, gtO);
 				}
-				this.checkValue(meas);
+				this.checkProcedure(meas);
 			}
 		}
 	
@@ -73,10 +74,33 @@ public abstract class LossTest extends TestCase {
 				meas.update(mlo, gtO);
 				
 			}
-			double val = meas.getValue();
-			this.checkValue(meas);
-			assertTrue("Worst prediction:", val>meas.getIdealValue()  );
+			this.checkProcedureWorst(meas);
 		}
+	}
+	
+	
+	public void testLossPerfect() {
+		int numIterations = 1000;
+		int[] numLabels = {2,3,5,8};
+		for(int l =0;l<numLabels.length;l++) {
+			Measure meas = this.getMeasure(numLabels[l]);
+			for(int i=0;i<numIterations;i++) {
+				boolean[] pred = this.generateBipartition(numLabels[l], i);
+				double[] predsupp = this.getDoublesFromBool(pred);
+				
+				boolean[] gt = Arrays.copyOf(pred, pred.length);
+				MultiLabelOutput mlo = new MultiLabelOutput(predsupp,0.5);
+				GroundTruth gtO = new GroundTruth(gt);				
+				meas.update(mlo, gtO);
+				
+			}
+			this.checkProcedurePerfect(meas);
+		}
+	}
+	
+	public void testLossName() {
+		Measure measure = this.getMeasure();
+		assertTrue("Not null name", measure.getName() != null);
 	}
 	
 	
@@ -108,7 +132,39 @@ public abstract class LossTest extends TestCase {
 	
 	public void checkValue(Measure measure) {
 		double val = measure.getValue();
-		assertTrue("Interval [0;1] checking", val <= 1.0 & val >=0);
+		assertTrue("NaN check", !Double.isNaN(val));
+		assertTrue("Finite val check", Double.isFinite(val));
+		assertTrue("Interval lower bound check", val >=measure.getIdealValue());
+		assertTrue("Interval upper bound check", val <= this.getWorstValue() );
+	}
+	
+	public void checkPerfect(Measure measure) {
+		double val = measure.getValue();
+		double idealV = measure.getIdealValue();
+		double worse = this.getWorstValue();
+		double compar = 0.5*(worse + idealV);
+		assertTrue("Check perfect", val <= compar);
+	}
+	
+	public void checkWorst(Measure measure) {
+		double val = measure.getValue();
+		double idealV = measure.getIdealValue();
+		double worse = this.getWorstValue();
+		double compar = 0.5*(worse + idealV);
+		assertTrue("Check worst", val >= compar);
+	}
+	
+	public void checkProcedure(Measure measure) {
+		this.checkValue(measure);
+	}
+	
+	public void checkProcedurePerfect(Measure measure) {
+		this.checkValue(measure);
+		this.checkPerfect(measure);
+	}
+	
+	public void checkProcedureWorst(Measure measure) {
+		this.checkValue(measure);
 	}
 	
 

@@ -37,7 +37,8 @@ public class KappaMLoss extends BipartitionLossFunctionBase {
 	@Override
 	public double computeLoss(boolean[] bipartition, boolean[] groundTruth) {
 		SimpleBinaryConfusionMatrix cm = new SimpleBinaryConfusionMatrix(bipartition, groundTruth);
-		return mulan.evaluation.measure.InformationRetrievalMeasuresPT.KappaM(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn());
+		double val = mulan.evaluation.measure.InformationRetrievalMeasuresPT.KappaM(cm.getTp(),cm.getFp(),cm.getFn(), cm.getTn()); 
+		return val;
 	}
 
 }

@@ -16,7 +16,7 @@ public class KappaLossTest extends LossTest {
 	}
 
 	@Override
-	public double getWostValue() {
+	public double getWorstValue() {
 		return 1.0;
 	}
 

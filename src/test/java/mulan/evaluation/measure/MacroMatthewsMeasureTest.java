@@ -4,20 +4,20 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class MacroAUCLossTest extends LossMacroTest {
+public class MacroMatthewsMeasureTest extends LossMacroTest {
 
-	public MacroAUCLossTest(String name) {
+	public MacroMatthewsMeasureTest(String name) {
 		super(name);
 	}
 
 	@Override
 	public Measure getMeasure() {
-		return new MacroAUCLoss(2);
+		return new MacroMatthewsMeasure(2);
 	}
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new MacroAUCLoss(numLabels);
+		return new MacroMatthewsMeasure(numLabels);
 	}
 
 	@Override
