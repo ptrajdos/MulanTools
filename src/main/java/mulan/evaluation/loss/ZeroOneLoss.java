@@ -1,7 +1,5 @@
 package mulan.evaluation.loss;
 
-import mulan.evaluation.loss.BipartitionLossFunctionBase;
-
 /**
  * Class implements Zero-one-criterion-based loss function
  * @author pawel trajdos

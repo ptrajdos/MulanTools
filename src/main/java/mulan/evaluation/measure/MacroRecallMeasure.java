@@ -1,8 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
-import mulan.evaluation.measure.MacroAverageMeasure;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1

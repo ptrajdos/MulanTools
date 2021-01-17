@@ -1,15 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
-
-/**
- * @author pawel trajdos
- * @since 0.0.1
- * @version 0.0.2
- *
- */
-import mulan.evaluation.measure.MacroAverageMeasure;
-
 public class MacroPrecisionMeasure extends LabelBasedPrecisionMeasure implements
 		MacroAverageMeasure {
 

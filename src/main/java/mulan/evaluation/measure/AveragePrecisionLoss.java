@@ -3,8 +3,6 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.AveragePrecision;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1
@@ -25,7 +23,12 @@ public class AveragePrecisionLoss extends AveragePrecision {
 	@Override
 	public double getValue() {
 		
-		return this.getIdealValue() -  super.getValue();
+		return super.getIdealValue() -  super.getValue();
+	}
+	
+	@Override
+	public double getIdealValue() {
+		return 0;
 	}
 
 	

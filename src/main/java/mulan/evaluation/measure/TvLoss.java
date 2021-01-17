@@ -1,6 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.LossBasedBipartitionMeasureBase;
 /**
  * @author pawel trajdos
  * @since 0.0.1

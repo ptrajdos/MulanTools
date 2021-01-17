@@ -1,7 +1,5 @@
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.Coverage;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1
@@ -21,8 +19,17 @@ public class CoverageLoss extends Coverage {
 	 */
 	@Override
 	public double getValue() {
-	
 		return  super.getValue();
+	}
+	
+	@Override
+	public double getIdealValue() {
+		return 0;
+	}
+	
+	@Override
+	public String getName() {
+		return super.getName()+ "_Loss";
 	}
 
 	

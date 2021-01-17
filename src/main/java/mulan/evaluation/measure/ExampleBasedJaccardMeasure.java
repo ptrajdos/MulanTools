@@ -15,9 +15,6 @@
  */
 package mulan.evaluation.measure;
 
-import mulan.evaluation.measure.ExampleBasedBipartitionMeasureBase;
-import mulan.evaluation.measure.InformationRetrievalMeasuresPT;
-
 /**
  * @author pawel trajdos
  * @since 0.0.1
