@@ -1,9 +1,5 @@
 package mulan.evaluation.measure;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 public class AveragePrecisionLossTest extends LossTest {
 
 	public AveragePrecisionLossTest(String name) {
@@ -24,6 +20,11 @@ public class AveragePrecisionLossTest extends LossTest {
 	@Override
 	public double getWorstValue() {
 		return 1;
+	}
+	
+	@Override
+	public void checkProcedureWorst(Measure measure) {
+		this.checkProcedure(measure);
 	}
 
 	

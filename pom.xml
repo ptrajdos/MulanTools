@@ -6,7 +6,7 @@
 
    <groupId>com.github.ptrajdos</groupId>
    <artifactId>MulanTools</artifactId>
-   <version>0.3.1</version>
+   <version>0.4.0</version>
    
    <name>MulanTools</name>
    <description> Contains MulanTools package developed by Pawel Trajdos </description>
@@ -122,7 +122,7 @@
     <dependency>
         <groupId>com.github.ptrajdos</groupId>
         <artifactId>WekaTools</artifactId>
-        <version>[1.8.0,)</version>
+        <version>[1.13.0,)</version>
     </dependency>
     
   </dependencies>

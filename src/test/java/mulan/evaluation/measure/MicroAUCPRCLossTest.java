@@ -1,34 +1,31 @@
 package mulan.evaluation.measure;
 
-public class CoverageLossTest extends LossTest {
-	
+public class MicroAUCPRCLossTest extends LossTest {
 
-	public CoverageLossTest(String name) {
+	public MicroAUCPRCLossTest(String name) {
 		super(name);
 	}
 
 	@Override
 	public Measure getMeasure() {
-		return new CoverageLoss();
+		return new MicroAUCPRCLoss(2);
 	}
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-
-		return new CoverageLoss();
+		return new MicroAUCPRCLoss(numLabels);
 	}
 
 	@Override
 	public double getWorstValue() {
-		return Double.POSITIVE_INFINITY;
+		return 1.0;
 	}
 	
 	@Override
 	public void checkProcedureWorst(Measure measure) {
-		//TODO check it!
-		this.checkProcedure(measure);
+		this.checkValue(measure);
 	}
 
-
+	
 
 }

@@ -1,9 +1,5 @@
 package mulan.evaluation.measure;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 public class MacroAUCLossTest extends LossMacroTest {
 
 	public MacroAUCLossTest(String name) {

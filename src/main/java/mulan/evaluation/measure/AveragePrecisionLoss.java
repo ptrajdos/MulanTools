@@ -30,6 +30,15 @@ public class AveragePrecisionLoss extends AveragePrecision {
 	public double getIdealValue() {
 		return 0;
 	}
+	
+	@Override
+	protected void updateRanking(int[] ranking, boolean[] trueLabels) {
+		//Fixes a bug in the parent class
+		int preCnt = this.count;
+		super.updateRanking(ranking, trueLabels);
+		if (preCnt == this.count)
+			this.count++;
+	}
 
 	
 

@@ -1,9 +1,5 @@
 package mulan.evaluation.measure;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 public class MicroJaccardMeasureTest extends LossTest {
 
 	public MicroJaccardMeasureTest(String name) {

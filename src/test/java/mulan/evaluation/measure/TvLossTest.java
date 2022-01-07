@@ -1,9 +1,5 @@
 package mulan.evaluation.measure;
 
-import static org.junit.Assert.*;
-
-import org.junit.Test;
-
 public class TvLossTest extends LossTest {
 
 	public TvLossTest(String name) {
