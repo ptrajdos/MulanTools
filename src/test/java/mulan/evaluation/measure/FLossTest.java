@@ -13,7 +13,7 @@ public class FLossTest extends LossTest {
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new FLoss();
+		return new FLoss(1.0);
 	}
 
 	@Override

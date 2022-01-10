@@ -29,14 +29,6 @@ public class ExampleBasedJaccardMeasure extends ExampleBasedBipartitionMeasureBa
 	 */
 	private static final long serialVersionUID = 3247083774773240506L;
 
-	/**
-     * Creates a new object
-     *
-     */
-    public ExampleBasedJaccardMeasure() {
-    }
-
-
     @Override
     public String getName() {
         return "Example-Based Jaccard Measure";
@@ -44,7 +36,7 @@ public class ExampleBasedJaccardMeasure extends ExampleBasedBipartitionMeasureBa
 
     @Override
     public double getIdealValue() {
-        return 1;
+        return 0;
     }
 
     @Override

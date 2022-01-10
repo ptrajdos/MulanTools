@@ -24,9 +24,9 @@ public class CoverageLossTest extends LossTest {
 	}
 	
 	@Override
-	public void checkProcedureWorst(Measure measure) {
+	public void checkProcedureWorst(Measure measure, int numLabels) {
 		//TODO check it!
-		this.checkProcedure(measure);
+		this.checkProcedure(measure,numLabels);
 	}
 
 

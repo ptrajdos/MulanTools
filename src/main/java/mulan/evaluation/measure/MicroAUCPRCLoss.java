@@ -36,13 +36,8 @@ public class MicroAUCPRCLoss extends MicroAUCPRC {
 	}
 
 	@Override
-	public double getValue() {
-		ThresholdCurve tc = new ThresholdCurvePT();
-        Instances result = tc.getCurve((ArrayList<Prediction>)all_Predictions, 1);
-        
-        double rarea =  ThresholdCurvePT.getPRCArea(result);
-		
-		return 1.0 -  rarea;
+	public double getValue() {	
+		return 1.0  -  super.getValue();
 	}
 	
 	@Override

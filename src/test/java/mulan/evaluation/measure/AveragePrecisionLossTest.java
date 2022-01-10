@@ -23,8 +23,8 @@ public class AveragePrecisionLossTest extends LossTest {
 	}
 	
 	@Override
-	public void checkProcedureWorst(Measure measure) {
-		this.checkProcedure(measure);
+	public void checkProcedureWorst(Measure measure, int numLabels) {
+		this.checkProcedure(measure,numLabels);
 	}
 
 	

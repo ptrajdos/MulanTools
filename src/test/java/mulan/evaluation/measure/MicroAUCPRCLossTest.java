@@ -22,8 +22,8 @@ public class MicroAUCPRCLossTest extends LossTest {
 	}
 	
 	@Override
-	public void checkProcedureWorst(Measure measure) {
-		this.checkValue(measure);
+	public void checkProcedureWorst(Measure measure, int numLabels) {
+		this.checkValue(measure,numLabels);
 	}
 
 	

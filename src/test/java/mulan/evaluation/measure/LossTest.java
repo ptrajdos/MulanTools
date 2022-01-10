@@ -36,7 +36,7 @@ public abstract class LossTest extends TestCase {
 				GroundTruth gtO = new GroundTruth(gt);				
 				meas.update(mlo, gtO);
 				
-				this.checkProcedure(meas);
+				this.checkProcedure(meas,numLabels[l]);
 			}
 	}
 	
@@ -56,7 +56,7 @@ public abstract class LossTest extends TestCase {
 					GroundTruth gtO = new GroundTruth(gt);				
 					meas.update(mlo, gtO);
 				}
-				this.checkProcedure(meas);
+				this.checkProcedure(meas,numLabels[l]);
 			}
 		}
 	
@@ -76,7 +76,7 @@ public abstract class LossTest extends TestCase {
 					GroundTruth gtO = new GroundTruth(gt);				
 					meas.update(mlo, gtO);
 				}
-				this.checkProcedure(meas);
+				this.checkProcedure(meas,numLabels[l]);
 			}
 		}
 	
@@ -96,7 +96,7 @@ public abstract class LossTest extends TestCase {
 				meas.update(mlo, gtO);
 				
 			}
-			this.checkProcedureWorst(meas);
+			this.checkProcedureWorst(meas,numLabels[l]);
 		}
 	}
 	
@@ -116,7 +116,7 @@ public abstract class LossTest extends TestCase {
 				meas.update(mlo, gtO);
 				
 			}
-			this.checkProcedurePerfect(meas);
+			this.checkProcedurePerfect(meas,numLabels[l]);
 		}
 	}
 	
@@ -173,18 +173,29 @@ public abstract class LossTest extends TestCase {
 	 * NaN, Infinity, range
 	 * @param measure
 	 */
-	public void checkValue(Measure measure) {
+	public void checkValue(Measure measure, int numLabels) {
 		double val = measure.getValue();
 		assertTrue("NaN check", !Double.isNaN(val));
 		assertTrue("Finite val check", Double.isFinite(val));
 		assertTrue("Interval lower bound check", val >=measure.getIdealValue());
 		assertTrue("Interval upper bound check", val <= this.getWorstValue() );
+		
+		if (measure instanceof MacroAverageMeasure) {
+			MacroAverageMeasure macroMeasure = (MacroAverageMeasure) measure;
+			for(int l=0;l<numLabels;l++) {
+				val = macroMeasure.getValue(l);
+				assertTrue("NaN check", !Double.isNaN(val));
+				assertTrue("Finite val check", Double.isFinite(val));
+				assertTrue("Interval lower bound check", val >=measure.getIdealValue());
+				assertTrue("Interval upper bound check", val <= this.getWorstValue() );
+			}
+		}
 	}
 	/**
 	 * Checks whether the value is better than the average.
 	 * @param measure
 	 */
-	public void checkPerfect(Measure measure) {
+	public void checkPerfect(Measure measure, int numLabels) {
 		double val = measure.getValue();
 		double idealV = measure.getIdealValue();
 		double worse = this.getWorstValue();
@@ -196,7 +207,7 @@ public abstract class LossTest extends TestCase {
 	 * Checks whether the value is worse than the average.
 	 * @param measure
 	 */
-	public void checkWorst(Measure measure) {
+	public void checkWorst(Measure measure, int numLabels) {
 		double val = measure.getValue();
 		double idealV = measure.getIdealValue();
 		double worse = this.getWorstValue();
@@ -204,18 +215,18 @@ public abstract class LossTest extends TestCase {
 		assertTrue("Check worst", val >= compar);
 	}
 	
-	public void checkProcedure(Measure measure) {
-		this.checkValue(measure);
+	public void checkProcedure(Measure measure, int numLabels) {
+		this.checkValue(measure,numLabels);
 	}
 	
-	public void checkProcedurePerfect(Measure measure) {
-		this.checkValue(measure);
-		this.checkPerfect(measure);
+	public void checkProcedurePerfect(Measure measure, int numLabels) {
+		this.checkValue(measure,numLabels);
+		this.checkPerfect(measure,numLabels);
 	}
 	
-	public void checkProcedureWorst(Measure measure) {
-		this.checkValue(measure);
-		this.checkWorst(measure);
+	public void checkProcedureWorst(Measure measure, int numLabels) {
+		this.checkValue(measure,numLabels);
+		this.checkWorst(measure,numLabels);
 	}
 	
 

@@ -6,23 +6,4 @@ public abstract class LossMacroTest extends LossTest {
 		super(name);
 	}
 
-	@Override
-	public void checkProcedure(Measure measure) {
-		super.checkProcedure(measure);
-	}
-
-	@Override
-	public void checkProcedurePerfect(Measure measure) {
-		// TODO Auto-generated method stub
-		super.checkProcedurePerfect(measure);
-	}
-
-	@Override
-	public void checkProcedureWorst(Measure measure) {
-		super.checkProcedureWorst(measure);
-	}
-	
-	
-
-
 }

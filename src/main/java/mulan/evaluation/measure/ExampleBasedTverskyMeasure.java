@@ -54,7 +54,7 @@ public class ExampleBasedTverskyMeasure extends ExampleBasedBipartitionMeasureBa
 
     @Override
     public double getIdealValue() {
-        return 1;
+        return 0;
     }
 
     @Override

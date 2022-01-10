@@ -13,7 +13,7 @@ public class MacroTverskyMeasureTest extends LossMacroTest {
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new MacroTverskyMeasure(numLabels);
+		return new MacroTverskyMeasure(numLabels,0.5,0.5);
 	}
 
 	@Override

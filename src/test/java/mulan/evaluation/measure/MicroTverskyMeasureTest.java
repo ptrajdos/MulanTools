@@ -13,7 +13,7 @@ public class MicroTverskyMeasureTest extends LossTest {
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new MicroTverskyMeasure(numLabels);
+		return new MicroTverskyMeasure(numLabels,0.5,0.5);
 	}
 
 	@Override

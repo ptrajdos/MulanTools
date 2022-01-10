@@ -35,21 +35,15 @@ public class MacroAUCPRCLoss extends MacroAUCPRC {
 
 	@Override
 	public double getValue() {
-		double[] labelAUC = new double[this.numOfLabels];
-        for (int i = 0; i < this.numOfLabels; i++) {
-            ThresholdCurve tc = new ThresholdCurvePT();
-            Instances result = tc.getCurve(this.m_Predictions[i], 1);
-            labelAUC[i] = ThresholdCurvePT.getPRCArea(result);
-        }
-        double val = 1- Utils.mean(labelAUC); 
+		
+        double val = 1.0- super.getValue(); 
         return val;
 	}
 
 	@Override
 	public double getValue(int labelIndex) {
-		ThresholdCurve tc = new ThresholdCurvePT();
-        Instances result = tc.getCurve(m_Predictions[labelIndex], 1);
-        double val = 1 - ThresholdCurvePT.getPRCArea(result);  
+		
+        double val = 1.0 - super.getValue(labelIndex);  
         return   val;
 	}
 	

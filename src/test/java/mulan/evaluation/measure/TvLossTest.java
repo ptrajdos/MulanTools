@@ -13,7 +13,7 @@ public class TvLossTest extends LossTest {
 
 	@Override
 	public Measure getMeasure(int numLabels) {
-		return new TvLoss();
+		return new TvLoss(0.5,0.5);
 	}
 
 	@Override
