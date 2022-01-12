@@ -15,7 +15,9 @@ import weka.core.Randomizable;
 import weka.core.TechnicalInformation;
 
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.1
  *
  */
 public class MekaWrapper extends MultiLabelLearnerBase implements Randomizable{
@@ -85,7 +87,6 @@ public class MekaWrapper extends MultiLabelLearnerBase implements Randomizable{
 	 */
 	@Override
 	public TechnicalInformation getTechnicalInformation() {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -93,10 +94,8 @@ public class MekaWrapper extends MultiLabelLearnerBase implements Randomizable{
 		return this.mekaClassifier;
 	}
 	
-
 	public String globalInfo() {
-		// TODO Auto-generated method stub
-		return null;
+		return "A wrapper that allows Mulan to use a Meka classifier";
 	}
 
 	@Override

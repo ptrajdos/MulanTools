@@ -9,7 +9,9 @@ import mulan.classifier.MultiLabelOutput;
 import weka.core.Instance;
 
 /**
- * @author pawel
+ * @author pawel trajdos
+ * @since 0.0.1
+ * @version 0.0.1
  *
  */
 public class MekaWrapperRegresion extends MekaWrapper {
