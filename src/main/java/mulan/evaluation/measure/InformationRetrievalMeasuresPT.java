@@ -150,6 +150,23 @@ public class InformationRetrievalMeasuresPT extends InformationRetrievalMeasures
     }
     
     /**
+     * Calculates balanced accuracy measure
+     * @param tp
+     * @param fp
+     * @param fn
+     * @param tn
+     * @return
+     */
+    public static double balancedAccuracy(double tp, double fp, double fn, double tn) {
+    	
+    	double sensitivity = recall(tp, fp, fn);
+    	double specificity = specificity(tn, fp, fn);
+    	
+    	double balAcc = 0.5*(sensitivity + specificity);
+    	return balAcc;
+    }
+    
+    /**
      * Computation of Tversky index based on tn, fp and fn. We treat special cases
      * with empty set predictions or/and ground truth as follows: (i) if the
      * algorithm outputs the set of all labels and the ground truth is the set
